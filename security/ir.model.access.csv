@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_proyecto_persona,proyecto.persona,model_proyecto_persona,base.group_user,1,1,1,1
+
+access_proyecto_reparto,proyecto.reparto,model_proyecto_reparto,base.group_user,1,1,1,1
+access_proyecto_grado,proyecto.grado,model_proyecto_grado,base.group_user,1,1,1,1
+access_proyecto_habilitacion,proyecto.habilitacion,model_proyecto_habilitacion,base.group_user,1,1,1,1

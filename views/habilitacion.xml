@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="proyecto_list2habilitacion">
+      <field name="name">proyecto list</field>
+      <field name="model">proyecto.habilitacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="habilitacion_persona_ids"/>
+          <!-- <button string="Limpiar" name ="limpiar" type="object" class="oe_highlight"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <!-- model.name form view -->
+    <record id="habilitacion_view_form" model="ir.ui.view">
+      <field name="name">proyecto.habilitacion</field>
+      <field name="model">proyecto.habilitacion</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <header>
+            <!-- <button string="Limpiar" name ="limpiar" type="object" class="oe_highlight"/> -->
+          </header>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="habilitacion_persona_ids"/>
+              <!-- <button string="Search" name ="BUSCAR" type="object" class="oe_highlight"/> -->
+              <!-- <field name="fieldocambiadoxboton"/> -->
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="proyecto.action_window">
+      <field name="name">proyecto window</field>
+      <field name="res_model">proyecto.habilitacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="proyecto.action_server">
+      <field name="name">proyecto server</field>
+      <field name="model_id" ref="model_proyecto_habilitacion"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+    <!-- Top menu item -->
+
+    <!-- <menuitem name="proyecto" id="proyecto.menu_root"/> -->
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="proyecto_menu_1habilitacion" parent="proyecto.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="proyecto_menu_1_list2habilitacion" parent="proyecto_menu_1habilitacion" action="proyecto.action_window"/>
+    <!-- <menuitem name="Server to list" id="proyecto" parent="proyecto.menu_2" action="proyecto.action_server"/> -->
+
+  </data>
+</odoo>
