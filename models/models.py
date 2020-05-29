@@ -110,11 +110,17 @@ class habilitacion(models.Model):
     name = fields.Char(
         string='Habilitacion',
     )
-
-
+#
+#
 
     
-    
+    habilitacion_persona_ids = fields.Many2many(
+        string='Habilitacion',
+        comodel_name='proyecto.persona',
+        relation='habilitaciones_persona_rel',
+        column1='habilitacion_id',
+        column2='persona_id',
+    )
      
 
     # @api.depends('value')
